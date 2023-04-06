@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Rowdies&family=Source+Code+Pro:wght@300;400;500;700&family=Ubuntu:wght@300;400;500&display=swap");
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+
+/* Typeface */
+  --header-height: 3rem;
+  --font-semi: 500;
+
+  /* Color */
+  --color-primary: #028a5d;
+  --color-primary-light: #03c988;
+  --color-secondary-light: #1c82ad;
+  --color-secondary-dark: #00337c;
+
+
+  /* Font Family */
+  --font-body: "ubuntu", sans-serif;
+  --font-family-code: "source code pro", monospace;
+  --font-family-heading: "montserrat", sans-serif;
+  --font-family-heading-alt: "rowdies", sans-serif;
+
+
+/* Font Size */
+  --font-size-base: 0.938rem;
+  --header-font-size: 1.25rem;
+  -font-size-big: 2rem;
+
+
+  /* Margins */
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+
+  /* z-index */
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-size-base: 1rem;
+    --header-font-size: 2rem;
+    -font-size-big: 3.5rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}
+
+
+/* CSS Classes */
+.section-title {
+  position: relative;
+  font-size: var(--header-font-size);
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  color: var(--color-secondary-dark);
+  text-align: center;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  /* bottom: -0.5rem; */
+  left: 0;
+  right: 0;
+  top: 2rem;
+  /* transform: translateX(-50%); */
+  width: 4rem;
+  height: 0.18rem;
+  background-color: var(--color-primary);
+}
+
+.section {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.bg-grid {
+  max-width: 64rem;
+  margin: auto --mb-2;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 2rem;
+  width: calc(100% - 2rem);
+
+}
+
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background: #00337c;
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+  width: 100%;
+}
+
+.l-header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+  font-weight: var(--font-semi);
+  padding: 0 1rem;
+  max-width: 64rem;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .nav--menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    padding: 2rem;
+    background: var(--color-primary);
+    transition: 500ms;
+  }
+  
+.show {
+  right: 0;
+}
+
+  .l-header .nav--item {
+    margin-bottom: var(--mb-4);
+  }
+
+   .nav--item:last-child {
+    margin-bottom: 0;
+  }
+
+  .nav-link {
+    position: relative;
+    color: #ffffff;
+  }
+
+   .nav-link:hover {
+    position: relative;
+    }
+
+ .nav-link:hover::after {
+    position: absolute;
+    content: '';
+    width: 70%;
+    height: 0.18rem;
+    left: 0;
+    top: 1.3rem;
+    background-color: var(--color-secondary-dark);
+}
+
+.active::after {
+  position: absolute;
+  content: '';
+  width: 70%;
+  height: 0.18rem;
+  left: 0;
+  top: 1.3rem;
+  background-color: var(--color-secondary-dark);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: var(--font-semi);
+  color: var(--color-primary-light);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav--toggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.bx-menu {
+
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+}
