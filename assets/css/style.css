@@ -139,6 +139,15 @@ button:focus-visible {
     margin-right: 1rem;
   }
 
+  .contact--input {
+    color: #242424;
+    outline: 2px solid #242424a3;
+  }
+
+  .project--link {
+    color: var(--color-secondary-dark);
+    border: 2px solid var(--color-secondary-dark);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -155,9 +164,14 @@ button:focus-visible {
   }
 
   .work--img {
-    filter: brightness(0.5);
     box-shadow: 0 4px 25px rgba(14, 36, 49, 0.5);
   }
+
+  .project--link {
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
+  
 }
 /* CSS Classes */
 .section-title {
@@ -505,7 +519,7 @@ section + section {
   margin-bottom: var(--mb-1);
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.5rem;
   font-family: var(--font-family-code);
   font-weight: 600;
   transition: 0.3s;
@@ -545,8 +559,6 @@ label {
   font-size: var(--font-size-base);
   font-family: var(--font-family-code);
   font-weight: var(--font-semi);
-  /* background-color: transparent; */
-  color: rgba(255, 255, 255, 0.9);
 }
 
 .contact--input:focus {
@@ -760,13 +772,13 @@ footer {
   gap: 2rem;
 }
 
-
+/* 
 .work--img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 0.5rem;
-}
+} */
 
 .contact--container {
   justify-items: center;
