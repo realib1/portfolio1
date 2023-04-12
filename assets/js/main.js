@@ -15,21 +15,44 @@ const showMenu = (toggleID, navID) => {
 showMenu("nav-toggle", "nav-menu");
 
 
-// Remove menu mobile
+// Add active and remove active for current active menu item
 const navLink = document.querySelectorAll(".nav-link");
 
 function linkAction() {
+    // Active link
     navLink.forEach(n => n.classList.remove("active"));
     this.classList.add("active");
-    console.log('link clicked');
 
+    // Remove menu mobile
     const navMenu = document.getElementById("nav-menu");
-    navMenu.classList.remove("show");
+    navMenu.classList.remove("active");
 }
 
 navLink.forEach(n => n.addEventListener("click", linkAction));
 
-// Copyright year
+// function to keep the menu active when scrolling
+const sections = document.querySelectorAll("section[id]");
+// const sectionClass = document.querySelectorAll("section[class]");
+const section = document.querySelectorAll("section");
+window.addEventListener("scroll", scrollActive);
+
+function scrollActive() {
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 50;
+        sectionId = current.getAttribute("id");
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            document.querySelector(".nav-menu a[href*=" + sectionId + "]").classList.add("active");
+        } else {
+            document.querySelector(".nav-menu a[href*=" + sectionId + "]").classList.remove("active");
+        }
+    });
+}
+
+// Footer year
 const year = document.getElementById("year");
 year.innerHTML = new Date().getFullYear();
 
