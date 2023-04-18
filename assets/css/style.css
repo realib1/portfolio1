@@ -457,6 +457,9 @@ section + section {
   font-family: var(--font-family-heading);
 }
 
+.about--text {
+  text-align: justify;
+
 .about--img {
   justify-self: center;
 }
