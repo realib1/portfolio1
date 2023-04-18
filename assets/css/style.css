@@ -515,12 +515,91 @@ section + section {
   align-items: center;
 } */
 
-.skills--bar {
+.skills--html {
   position: absolute;
   left: 0;
   bottom: 0;
   height: .25rem;
   width: 90%;
+  background-color: var(--color-primary);
+  z-index: var(--z-back);
+}
+
+.skills--css {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: .25rem;
+  width: 75%;
+  background-color: var(--color-primary);
+  z-index: var(--z-back);
+}
+
+.skills--js {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: .25rem;
+  width: 45%;
+  background-color: var(--color-primary);
+  z-index: var(--z-back);
+}
+
+.skills--py {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: .25rem;
+  width: 70%;
+  background-color: var(--color-primary);
+  z-index: var(--z-back);
+}
+
+.skills--dj {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: .25rem;
+  width: 50%;
+  background-color: var(--color-primary);
+  z-index: var(--z-back);
+}
+
+.skills--bootstrap {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: .25rem;
+  width: 60%;
+  background-color: var(--color-primary);
+  z-index: var(--z-back);
+}
+
+.skills--tailwindcss {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: .25rem;
+  width: 78%;
+  background-color: var(--color-primary);
+  z-index: var(--z-back);
+}
+.skills--sass {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: .25rem;
+  width: 25%;
+  background-color: var(--color-primary);
+  z-index: var(--z-back);
+}
+
+.skills--react {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: .25rem;
+  width: 47%;
   background-color: var(--color-primary);
   z-index: var(--z-back);
 }
@@ -584,6 +663,23 @@ section + section {
   border-radius: 0.5rem;
   box-shadow: 0 4px 25px rgba(14, 36, 49, 0.5);
 
+}
+
+.contact--subtitle {
+  margin-bottom: var(--mb-2);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-semi);
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+.contact--text {
+  margin-bottom: var(--mb-2);
+  font-size: var(--font-size-base);
+  /* font-weight: var(--font-semi); */
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  max-width: 400px;
 }
 
 label {
@@ -654,7 +750,7 @@ footer {
   margin-bottom: var(--mb-2);
 }
 
-.footer--title {
+.footer--title a{
   margin-bottom: var(--mb-2);
   /* font-family: var(--font-family-heading); */
   font-size: 2rem;
